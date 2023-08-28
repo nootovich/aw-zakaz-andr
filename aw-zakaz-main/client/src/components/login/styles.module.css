@@ -1,0 +1,93 @@
+.loginHeader {
+	height: 60px;
+	background: var(--gradient-background);
+}
+
+.loginHeader img {
+	margin-left: 150px;
+}
+
+.container {
+	display: flex;
+	margin-top: 196px;
+	align-items: center;
+}
+
+.loginFooter {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--gradient-background);
+}
+
+.loginForm {
+	border-radius: 42px;
+	width: 600px;
+	background: var(--gradient-background);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	height: 350px;
+	margin-bottom: 272px;
+}
+
+.loginDatas {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.containerInput {
+	width: 80%;
+}
+
+.inputs p {
+	font-size: 16px;
+}
+
+.inputs {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	color: #fff;
+	text-align: left;
+	font-family: "Montserrat";
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.inputs input {
+	height: 20px;
+	width: 100%;
+	padding: 12px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Montserrat";
+}
+
+.loginDatas button {
+	border-radius: 9px;
+	background: #033c71;
+	border: none;
+	width: 178px;
+	height: 56px;
+	color: #fff;
+	font-family: "Montserrat";
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	justify-content: center;
+	margin-top: 65px;
+}

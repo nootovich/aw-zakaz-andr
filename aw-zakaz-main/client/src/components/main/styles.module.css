@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	transition: 0.2s;
+	color: #fff;
+}
+
+a:hover {
+	color: #d2d2d2;
+}
+
+.mainHeader {
+	background: #003768;
+}
+
+.header {
+	max-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.header img {
+	cursor: pointer;
+}
+
+.mainHeaderNav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.quit {
+	right: 40px;
+	position: absolute;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 4px;
+	background: #d2d2d2;
+}
+
+.mainHeaderNav ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+.mainHeaderNav li {
+	margin: 0 12px;
+}
+
+.mainHeaderPage {
+	color: #fff;
+	height: 800px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainHeaderPage li {
+	line-height: 8px;
+}
+
+.mainHeaderPage p {
+	font-family: "Montserrat", sans-serif;
+}
+
+.actionBtns {
+	display: flex;
+	align-items: center;
+	margin: 50px 0 0 12px;
+}
+
+.buyBtn {
+	color: #fff;
+	font-size: 14px;
+	padding: 12px 18px;
+	border-radius: 12px;
+	background: #ff1d97;
+	border: none;
+}
+
+.mainPage {
+	display: flex;
+	justify-content: space-around;
+	padding: 80px 0;
+}
+
+.mainPageText {
+	width: 600px;
+}
+
+.mainPageText img {
+	margin-right: 12px;
+}
+
+.QuestionsText {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.mainPageText ul {
+	margin: 0;
+	padding: 0;
+}
+
+.mainPageText li {
+	display: flex;
+	align-items: center;
+}
+
+.boldText {
+	margin-left: 4px;
+	font-weight: bold;
+}
+
+.mainForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form {
+	margin-top: 0;
+	margin-bottom: 4px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.mainPageForm {
+	display: flex;
+	padding: 28px;
+	width: 300px;
+	border-radius: 12px;
+	flex-direction: column;
+	align-items: center;
+	background: var(--gradient-background);
+}
+
+.mainPageForm P {
+	margin: 4px;
+	color: #fff;
+}
+
+.mainPageForm > div {
+	width: 100%;
+}
+
+.mainPageForm input,
+.mainPageForm textarea {
+	padding: 8px;
+	height: 18px;
+	width: 90%;
+	border: none;
+	margin-bottom: 12px;
+	border-radius: 12px;
+	outline: none;
+}
+
+.mainPageForm button {
+	padding: 12px 28px;
+	border-radius: 8px;
+	font-size: 16px;
+	border: none;
+	background: #ff1d97;
+	font-weight: bold;
+	color: white;
+}
+.mainPageForm textarea {
+	resize: none;
+	height: 80px;
+}
+
+.footer {
+	width: 100%;
+	background: #003768;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
