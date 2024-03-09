@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for product in product_list %}
+        <div>
+            <img src="{{ product.image.url }}">
+            <span style="font-size: 36px;"> {{ product.name   }} </span>
+            <span style="font-size: 12px;"> {{ product.price }} </span>
+            <p> {{ product.description }} </p>
+            <button type="button"><a href="{{ product.link }}">Заказать</a></button>
+            <br>
+        </div>
+    {% endfor %}
+{% endblock %}
