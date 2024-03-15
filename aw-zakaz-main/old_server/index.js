@@ -13,7 +13,7 @@ app.use("/api/post", postRouter)
 
 const start = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017");
+//    await mongoose.connect("mongodb://127.0.0.1:27017");
 
     app.listen(PORT, () => {
       console.log("Server started on port", PORT);

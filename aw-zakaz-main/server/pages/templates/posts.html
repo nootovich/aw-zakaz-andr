@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in posts_list %}
+        <div>
+            <img src="{{ post.image.url }}">
+            <span style="font-size: 36px;"> {{ post.title   }} </span>
+            <span style="font-size: 12px;"> {{ post.created }} </span>
+            <p> {{ post.content }} </p>
+            <button type="button"><a href="/post?post={{post.id}}">Читать</a></button>
+            <br>
+        </div>
+    {% endfor %}
+{% endblock %}
