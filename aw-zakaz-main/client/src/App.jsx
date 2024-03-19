@@ -10,6 +10,7 @@ import Posts from "./components/posts/posts";
 import Review from "./components/review/review";
 import Contacts from "./components/contacts/contacts";
 import Adminpanel from "./components/admpanel/admpanel";
+import Postedit from "./components/admpanel/post_edit/post_edit";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -26,6 +27,7 @@ function App() {
         <Route path='/review' element={<Review />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/adm-panel' element={<Adminpanel />} />
+        <Route path='/adm-panel/post-edit' element={<Postedit />} />
       </Routes>
       <footer class={styles.footer}>
         <img src='./src/assets/footer.png' />
