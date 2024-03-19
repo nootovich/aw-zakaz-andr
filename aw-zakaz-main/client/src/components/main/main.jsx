@@ -2,15 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./styles.module.css";
 
-import logo from "../../assets/logo.png";
-import footer from "../../assets/footer.png";
-import bottle from "../../assets/header-bottle.png";
-import downloadDoc from "../../assets/download-doc.png";
-import phone from "../../assets/phone.png";
-import mail from "../../assets/mail.png";
-import human from "../../assets/human.png";
-import location from "../../assets/location.png";
-import calendar from "../../assets/calendar.png";
+const logo = "/static/logo.png";
+const bottle = "/static/header-bottle.png";
+const downloadDoc = "/static/download-doc.png";
+const phone = "/static/phone.png";
+const mail = "/static/mail.png";
+const human = "/static/human.png";
+const location = "/static/location.png"
+const calendar = "/static/calendar.png";
 
 const Main = () => {
   const navigate = useNavigate();

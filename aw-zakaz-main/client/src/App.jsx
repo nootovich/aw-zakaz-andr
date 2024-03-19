@@ -30,7 +30,7 @@ function App() {
         <Route path='/adm-panel/post-edit' element={<Postedit />} />
       </Routes>
       <footer class={styles.footer}>
-        <img src='./src/assets/footer.png' />
+        <img src="/static/footer.png" />
       </footer>
     </>
   );

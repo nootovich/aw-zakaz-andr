@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
-import logo from "../../assets/logo.png";
-import circle from "../../assets/круг.png";
+const logo = "/static/logo.png";
+const circle = "/static/круг.png";
 import { useNavigate } from "react-router-dom";
 
 const Review = () => {

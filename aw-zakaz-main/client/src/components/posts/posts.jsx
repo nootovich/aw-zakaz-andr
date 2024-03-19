@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+const logo = "/static/logo.png";
 
 import GetPosts from "./Post";
 import styles from "./styles.module.css";

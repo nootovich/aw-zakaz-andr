@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../assets/logo.png";
+const logo = "/static/logo.png";
 import styles from "./styles.module.css";
 import PostList from "./Post";
 

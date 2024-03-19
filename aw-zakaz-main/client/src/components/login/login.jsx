@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-import logo from "../../assets/logo.png";
-import footer from "../../assets/footer.png";
+const logo = "/static/logo.png";
 import { auth } from "../../actions/admin";
 
 const Login = () => {

@@ -15,7 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import TemplateView
 from dcart.settings import MEDIA_URL, MEDIA_ROOT
 from django.conf.urls.static import static
 from pages.views import index, photos, delivery, wholesale, contacts
@@ -24,14 +25,14 @@ from posts.views import posts_list, post
 from reviews.views import reviews
 
 urlpatterns = [
-    path('', index),
+    path('', TemplateView.as_view(template_name="base.html")),
     path('admin/', admin.site.urls),
-    path('catalogue/', catalogue),
-    path('posts/', posts_list),
-    path('post/', post),
-    path('photos/', photos),
-    path('delivery/', delivery),
-    path('reviews/', reviews),
-    path('wholesale/', wholesale),
-    path('contacts/', contacts),
+    path('api/', include('dcart.api.urls')),
+    path('catalog/', TemplateView.as_view(template_name="base.html")),
+    path('posts/', TemplateView.as_view(template_name="base.html")),
+    path('review/', TemplateView.as_view(template_name="base.html")),
+    path('contacts/', TemplateView.as_view(template_name="base.html")),
+    path('login/', TemplateView.as_view(template_name="base.html")),
+    path('adm-panel/', TemplateView.as_view(template_name="base.html")),
+    path('adm-panel/post-edit/', TemplateView.as_view(template_name="base.html")),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

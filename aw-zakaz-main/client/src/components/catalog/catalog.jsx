@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import logo from "../../assets/logo.png";
-import postImg from "../../assets/postImg.png"
+const logo = "/static/logo.png";
 import styles from "./styles.module.css"
 
 const Catalog = () => {
+  const [data, updateData] = useState([]);
+
   const navItems = () => {
+
     const items = localStorage.getItem("token") ? (
       <>
         <ul>
@@ -70,6 +72,15 @@ const Catalog = () => {
     return text;
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}products`)
+      const result = await response.json()
+      updateData(result)
+    }
+    fetchData();
+  }, []);
+  
   return (
     <>
       <header className={styles.header}>
@@ -78,196 +89,25 @@ const Catalog = () => {
       </header>
       <div className={styles.container}>
         <div className={styles.items}>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
+          {data.map((product) => (
+            <div className={styles.post}>
+              <img src={product.image} alt="Изображение товара" />{" "}
+              <div className={styles.priceBox}>
+                <p>от {product.price}р.</p>
+              </div>
             {/* position: relative */}
             <div className={styles.price}></div> {/* position: absolute */}
             <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
+              <p className={styles.name}>{handleLengthName(`${product.name}`)}</p>
               <div className={styles.description}>
                 <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
+                  {handleLengthDescription(`${product.description}`)}
                 </p>
-                <button>Заказать</button>
+                <button><a href={product.link}>Заказать</a></button>
               </div>
             </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
             </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.post}>
-            <img src={postImg} alt="Изображение статьи" />{" "}
-            <div className={styles.priceBox}>
-              <p>от 999 999 руб</p>
-            </div>
-            {/* position: relative */}
-            <div className={styles.price}></div> {/* position: absolute */}
-            <div className={styles.postInfo}>
-              <p className={styles.name}>{handleLengthName("Название смолы бла бла бла")}</p>
-              <div className={styles.description}>
-                <p>
-                  {handleLengthDescription(
-                    "Тут какой-нибудь текст связанный со статьёй"
-                  )}
-                </p>
-                <button>Заказать</button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
