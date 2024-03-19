@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for review in review_list %}
+    {% for entry in review_list %}
         <div>
-            <img src="{{ review.user_avatar }}">
-            <span style="font-size: 36px;"> {{ review.username }} </span>
-            <span style="font-size: 12px;"> {{ review.created }} </span>
-            <p> {{ review.content }} </p>
-            {% for img in review.images %}
-                <img src="{{ img.url }}">
+            <img src="{{ entry.review.user_avatar }}">
+            <span style="font-size: 36px;"> {{ entry.review.username }} </span>
+            <span style="font-size: 12px;"> {{ entry.review.created }} </span>
+            <p> {{ entry.review.content }} </p>
+            {% for img in entry.images %}
+                <img src="{{ img.image.url }}">
             {% endfor %}
             <br>
         </div>

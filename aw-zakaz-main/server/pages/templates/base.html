@@ -1,19 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
     <head>
-        <title>
-            AW
-        </title>
-    </head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="{% static 'vite.svg' %}" />
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AW</title>
+      </head>
     <body>
-        <button type="button"><a href="/">Главная</a></button> 
-        <button type="button"><a href="/catalogue">Каталог</a></button> 
-        <button type="button"><a href="/posts">Статьи</a></button>
-        <button type="button"><a href="/photos">Фотогаллерея</a></button> 
-        <button type="button"><a href="/delivery">Доставка и оплата</a></button> 
-        <button type="button"><a href="/reviews">Отзывы</a></button> 
-        <button type="button"><a href="/wholesale">Опт</a></button> 
-        <button type="button"><a href="/contacts">Контакты</a></button> 
+        <div id="root">
+            <button type="button"><a href="/">Главная</a></button> 
+            <button type="button"><a href="/catalogue">Каталог</a></button> 
+            <button type="button"><a href="/posts">Статьи</a></button>
+            <button type="button"><a href="/photos">Фотогаллерея</a></button> 
+            <button type="button"><a href="/delivery">Доставка и оплата</a></button> 
+            <button type="button"><a href="/reviews">Отзывы</a></button> 
+            <button type="button"><a href="/wholesale">Опт</a></button> 
+            <button type="button"><a href="/contacts">Контакты</a></button> 
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>
-{% block content %}
-{% endblock %}

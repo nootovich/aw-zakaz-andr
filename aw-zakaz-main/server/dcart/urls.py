@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from dcart.settings import MEDIA_URL, MEDIA_ROOT
+from django.conf.urls.static import static
 from pages.views import index, photos, delivery, wholesale, contacts
 from products.views import catalogue
 from posts.views import posts_list, post
@@ -32,4 +34,4 @@ urlpatterns = [
     path('reviews/', reviews),
     path('wholesale/', wholesale),
     path('contacts/', contacts),
-]
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)
