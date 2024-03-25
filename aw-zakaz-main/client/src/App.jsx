@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { setAuthToken } from "../src/actions/admin";
-
 import styles from "./components/main/styles.module.css";
 
 import Main from "./components/main/main";
@@ -13,10 +11,6 @@ import Adminpanel from "./components/admpanel/admpanel";
 import Postedit from "./components/admpanel/post_edit/post_edit";
 
 function App() {
-  const token = localStorage.getItem("token");
-  if (token) {
-    setAuthToken(token);
-  }
   return (
     <>
       <Routes>
@@ -29,7 +23,7 @@ function App() {
         <Route path='/adm-panel' element={<Adminpanel />} />
         <Route path='/adm-panel/post-edit' element={<Postedit />} />
       </Routes>
-      <footer class={styles.footer}>
+      <footer className={styles.footer}>
         <img src="/static/footer.png" />
       </footer>
     </>

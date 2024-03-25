@@ -20,19 +20,21 @@ from django.views.generic import TemplateView
 from dcart.settings import MEDIA_URL, MEDIA_ROOT
 from django.conf.urls.static import static
 from pages.views import index, photos, delivery, wholesale, contacts
-from products.views import catalogue
+from products.views import catalogue, create_product
 from posts.views import posts_list, post
 from reviews.views import reviews
+from .views import post_edit
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="base.html")),
     path('admin/', admin.site.urls),
     path('api/', include('dcart.api.urls')),
+    path('login/', TemplateView.as_view(template_name="base.html")),
     path('catalog/', TemplateView.as_view(template_name="base.html")),
     path('posts/', TemplateView.as_view(template_name="base.html")),
     path('review/', TemplateView.as_view(template_name="base.html")),
     path('contacts/', TemplateView.as_view(template_name="base.html")),
-    path('login/', TemplateView.as_view(template_name="base.html")),
     path('adm-panel/', TemplateView.as_view(template_name="base.html")),
-    path('adm-panel/post-edit/', TemplateView.as_view(template_name="base.html")),
+    path('adm-panel/post-edit/', post_edit),
+    path('adm-panel/post-edit/create_product/', create_product)
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

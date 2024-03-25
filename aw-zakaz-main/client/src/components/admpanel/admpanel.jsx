@@ -29,7 +29,7 @@ const Admpanel = () => {
           <div className={styles.block}>
             <div className={styles.title}>
               <p>Добавить товар в каталог</p>
-              <button className={styles.addPost}>+</button>
+              <button className={styles.addPost}><a href="post-edit">+</a></button>
             </div>
             <div className={styles.box}>
               <p className={styles.namePost}>Ivan A...</p>

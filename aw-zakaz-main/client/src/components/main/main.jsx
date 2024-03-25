@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./styles.module.css";
 
@@ -12,6 +12,9 @@ const location = "/static/location.png"
 const calendar = "/static/calendar.png";
 
 const Main = () => {
+  const [error, seterror] = useState("");
+  const [isauthenticated, setauthenticated] = useState(false);
+  
   const navigate = useNavigate();
 
   const handleNavigateToMain = () => {
@@ -22,8 +25,25 @@ const Main = () => {
     e.preventDefault();
   };
 
+  const getSession = () => {
+    fetch("/api/session", {
+    credentials:"same-origin",
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.isauthenticated) {
+        setauthenticated(true)
+      } else {
+        setauthenticated(false)
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
   const navItems = () => {
-    const items = localStorage.getItem("token") ? (
+    const items = isauthenticated ? (
       <>
         <ul>
           <li>
@@ -41,16 +61,10 @@ const Main = () => {
           <li>
             <a href="/adm-panel">Панель</a>
           </li>
+          <li>
+          <a href="/api/logout">Выйти</a>
+          </li>
         </ul>
-        <button
-          className={style.quit}
-          onClick={() => {
-            localStorage.removeItem("token");
-            navigate("/");
-          }}
-        >
-          Выйти
-        </button>
       </>
     ) : (
       <ul>
@@ -71,10 +85,10 @@ const Main = () => {
         </li>
       </ul>
     );
-
     return items;
   };
 
+  getSession();
   return (
     <>
       <header className={style.mainHeader}>
